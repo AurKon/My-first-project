@@ -29,11 +29,11 @@ int main()
 
     for(int i=0;i<n;i++) //Duomenu ivedimas
     {
-        cout<<"Iveskite varda: "<<endl; //ivedamas vardas
+        cout<<"Iveskite varda: "; //ivedamas vardas
         cin>>D[i].var;
-        cout<<"Iveskite pavarde: "<<endl; //ivedama pavarde
+        cout<<"Iveskite pavarde: "; //ivedama pavarde
         cin>>D[i].pav;
-        cout<<"Ar pazymius irasysite patys ar juos parinkti atsitiktinai? P/A"<<endl;
+        cout<<"Ar pazymius irasysite patys ar juos parinkti atsitiktinai? P/A: ";
         cin>>D[i].tip;
         if(D[i].tip=='P' || D[i].tip=='p') //rankinis pazymiu ivedimas
         {
@@ -57,38 +57,41 @@ int main()
                 }
             }
             D[i].ndnr=D[i].ndnr-1; //pakoreguojami kintamieji, kad ivestas '0 nesiskaitytu kaip pazymys'
+            cout<<"Iveskite egzamino pazymi: "<<endl; //egzamino pazymio irasymas
+            cin>>D[i].egz;
+            if(D[i].egz>=0 && D[i].egz<11) //tikrinimas, ar pazymio formatas teisingas
+            {
+                D[i].egz=D[i].egz;
+            }
+            else //programos stabdymas, jei pazymio formatas neteisingas
+            {
+                cout<<"KLAIDA IVEDIME!!!"<<endl;
+                return(0);
+            }
         }
         else if(D[i].tip=='A' || D[i].tip=='a') //atsitiktiniu pazymiu generavimas
         {
-            cout<<"Kiek atsitiktiniu pazymiu norite gauti?"<<endl;
+            cout<<"Atsitiktiniu pazymiu skaicius: ";
             cin>>D[i].ndnr;
             std::srand(time(0));
-            cout<<"Sugeneruoti pazymiai:"<<endl;
+            cout<<"Sugeneruoti namu darbu pazymiai: ";
             for(int j=0;j<D[i].ndnr;j++)
             {
                 D[i].m[j]=1+std::rand()%10;
-                cout<<D[i].m[j]<<endl;
+                cout<<D[i].m[j]<<" ";
             }
+            cout<<endl;
+            cout<<"Sugeneruotas egzamino pazymys: ";
+            D[i].egz=1+std::rand()%10;
+            cout<<D[i].egz<<endl;
         }
         else //programos stabdymas, jei ivesties formatas neteisingas
         {
             cout<<"KLAIDA IVEDIME!!!"<<endl;
             return(0);
         }
-
-        cout<<"Iveskite egzamino pazymi: "<<endl; //egzamino pazymio irasymas
-        cin>>D[i].egz;
-        if(D[i].egz>=0 && D[i].egz<11) //tikrinimas, ar pazymio formatas teisingas
-        {
-            D[i].egz=D[i].egz;
-        }
-        else //programos stabdymas, jei pazymio formatas neteisingas
-        {
-            cout<<"KLAIDA IVEDIME!!!"<<endl;
-            return(0);
-        }
         char ats;
-        cout<<"Ar norite ivesti daugiau zmoniu? T/N"<<endl; //uzklausa, ar bus daugiau zmoniu duomenims
+        cout<<"Ar norite ivesti daugiau zmoniu? T/N: "; //uzklausa, ar bus daugiau zmoniu duomenims
         cin>>ats;
         if(ats=='T' || ats=='t') //teigiamas atsakymas
         {
@@ -106,8 +109,9 @@ int main()
     }
 
     char ats;
-    cout<<"Ar galutini rezultata pateikti mediana ar vidurkiu? M/V"<<endl; //uzklausa, ar rezultata pateikti mediana ar vidurkiu
+    cout<<"Ar galutini rezultata pateikti mediana ar vidurkiu? M/V: "; //uzklausa, ar rezultata pateikti mediana ar vidurkiu
     cin>>ats;
+    cout<<endl;
     if(ats=='M' || ats=='m') //Galutinis rezultatas su mediana
         {
             for(int i=0;i<n;i++) //Rikiavimas
@@ -138,7 +142,7 @@ int main()
             }
             for(int i=0;i<n;i++)
             {
-                cout<<D[i].var<<" "<<D[i].pav<<" | mediana: "<<fixed<<setprecision(2)<<D[i].med<<endl;
+                cout<<D[i].var<<" "<<D[i].pav<<" | mediana: "<<fixed<<setprecision(2)<<D[i].med*0.4+D[i].egz*0.6<<endl;
             }
         }
         else if(ats=='V' || ats=='v') //Galutinis rezultatas su vidurkiu
@@ -161,7 +165,7 @@ int main()
             }
             for(int i=0;i<n;i++)
             {
-                cout<<D[i].var<<" "<<D[i].pav<<" | vidurkis: "<<fixed<<setprecision(2)<<D[i].vid<<endl;
+                cout<<D[i].var<<" "<<D[i].pav<<" | vidurkis: "<<fixed<<setprecision(2)<<D[i].vid*0.4+D[i].egz*0.6<<endl;
             }
         }
         else //programos stabdymas, jei ivesties formatas neteisingas
