@@ -1,2 +1,2 @@
 # My-first-project
-Proect PVZ
+Project PVZ
