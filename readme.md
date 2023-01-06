@@ -1,6 +1,6 @@
 # v0.4
 
-v0.3 versiją papildome funkcijomis naudojant list konteinerį bei išmatuojame jo veikimo spartą ir vertotojui pateikiame std::vector ir std::list funkciju veikimo greičius.
+v0.3 versiją papildome funkcijomis naudojant list konteinerį bei išmatuojame jo veikimo spartą ir vartotojui pateikiame std::vector ir std::list funkciju veikimo greičius.
 
 Intel(R) Core(TM) i5-1035GZ CPU @ 1.20GHz, 1498Mhz; RAM 8.00 GB; HDD 236 GB;
 
