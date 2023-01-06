@@ -1,5 +1,5 @@
 ## v1.0
-#Naudojimosi instrukcija
+# Naudojimosi instrukcija
 
 Skirtingos versijos:
 Duomenu vedimas ranka (v0.1)
