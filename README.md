@@ -1,3 +1,9 @@
+# v0.3
+
+Šioje versijoje papildome v0.2 versiją galimybe studentų duomenų failą generuoti atsitiktinai. Generuojami 1000, 10000, 100000, 1000000, 10000000 įrašų failai, priklausomai nuo vartotojo pasirinkimo. Suskaičiavus galutinį rezultatą, studentai yra išskirstomi į dvi grupes: moksliukai(galutinis >= 5) ir vargšiukai (galutinis < 5). Galiausiai, šios dvi grupės yra įrašomos į du naujus failus.
+
+Programa taip pat atlieka laiko matavimą failų generavimui, nuskaitymui, išskirstymui bei įrašymui į failus. Žemiau pateikti laiko matavimo rezultatai kiekvienam duomenų kiekiui.
+
 ![1000](https://user-images.githubusercontent.com/113659762/198419122-75651060-b012-4793-b43d-2a7ad30b65fb.jpg)
 
 
